@@ -17,8 +17,6 @@ in pkgs.mkShell {
   ];
   # See https://stackoverflow.com/a/61601847
   shellHook = ''
-    set -a
-    source .env
-    set +a
+    . .env.sh
   '';
 }
