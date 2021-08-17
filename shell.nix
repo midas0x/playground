@@ -15,8 +15,4 @@ in pkgs.mkShell {
     pkgs.seth
     pkgs.solc
   ];
-  # See https://stackoverflow.com/a/61601847
-  shellHook = ''
-    . .env.sh
-  '';
 }

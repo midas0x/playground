@@ -1,4 +1,2 @@
-#!/bin/sh
-
 export ETH_RPC_URL=https://example.com
 export DAPP_REMAPPINGS=$(cat remappings.txt)
