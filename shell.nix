@@ -9,6 +9,9 @@ in pkgs.mkShell {
   src = null;
   name = "dapptools";
   buildInputs = with pkgs; [
+    # Node.js
+    pkgs.nodejs
+    # Dapp Tools
     pkgs.dapp
     pkgs.ethsign
     pkgs.hevm
