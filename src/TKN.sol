@@ -9,13 +9,11 @@ contract TKN is ERC20 {
         string memory symbol,
         uint256 supply
     ) ERC20(name, symbol) {
-        // 1 token = 1 * (10 ** decimals)
-        _mint(address(this), supply * 10**uint256(decimals()));
+        _mint(address(this), supply);
     }
 
     function faucet(uint256 amount) public {
-        uint256 toMint = amount * 10**uint256(decimals());
-        this.approve(msg.sender, toMint);
-        transferFrom(address(this), msg.sender, toMint);
+        this.approve(msg.sender, amount);
+        transferFrom(address(this), msg.sender, amount);
     }
 }

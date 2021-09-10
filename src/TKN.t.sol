@@ -11,7 +11,7 @@ contract TKNTest is DSTest {
     string private symbol = "TKN";
 
     function setUp() public {
-        tkn = new TKN(name, symbol, 5);
+        tkn = new TKN(name, symbol, 10);
     }
 
     function testGeneral() public {
@@ -20,9 +20,7 @@ contract TKNTest is DSTest {
     }
 
     function testFaucet() public {
-        tkn.faucet(2);
-        // 2 with 18 zeros
-        uint256 expected = 2000000000000000000;
-        assertEq(tkn.balanceOf(address(this)), expected);
+        tkn.faucet(5);
+        assertEq(tkn.balanceOf(address(this)), 5);
     }
 }

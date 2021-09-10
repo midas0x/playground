@@ -13,7 +13,7 @@ contract WTKNTest is DSTest {
     string private symbol = "WTKN";
 
     function setUp() public {
-        tkn = new TKN("Token", "TKN", 1000);
+        tkn = new TKN("Token", "TKN", 10);
         wtkn = new WTKN(name, symbol, address(tkn));
     }
 
@@ -23,27 +23,21 @@ contract WTKNTest is DSTest {
     }
 
     function testWrap() public {
-        // 10 with 18 zeros
-        uint256 amount = 10000000000000000000;
-
-        tkn.faucet(10);
-        tkn.approve(address(wtkn), amount);
-        wtkn.depositFor(address(this), amount);
+        tkn.faucet(5);
+        tkn.approve(address(wtkn), 5);
+        wtkn.depositFor(address(this), 5);
 
         assertEq(tkn.balanceOf(address(this)), 0);
-        assertEq(wtkn.balanceOf(address(this)), amount);
+        assertEq(wtkn.balanceOf(address(this)), 5);
     }
 
     function testUnwrap() public {
-        // 10 with 18 zeros
-        uint256 amount = 10000000000000000000;
+        tkn.faucet(5);
+        tkn.approve(address(wtkn), 5);
+        wtkn.depositFor(address(this), 5);
+        wtkn.withdrawTo(address(this), 5);
 
-        tkn.faucet(10);
-        tkn.approve(address(wtkn), amount);
-        wtkn.depositFor(address(this), amount);
-        wtkn.withdrawTo(address(this), amount);
-
-        assertEq(tkn.balanceOf(address(this)), amount);
+        assertEq(tkn.balanceOf(address(this)), 5);
         assertEq(wtkn.balanceOf(address(this)), 0);
     }
 }
