@@ -4,11 +4,15 @@
   "description": "Playground to test out different Smart Contract and dApp ideas.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:midas0x/playground.git"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "prettier": "^2.4.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.18"
+  }
 }
