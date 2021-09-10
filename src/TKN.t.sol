@@ -7,9 +7,16 @@ import "./TKN.sol";
 
 contract TKNTest is DSTest {
     TKN tkn;
+    string name = "Token";
+    string symbol = "TKN";
 
     function setUp() public {
-        tkn = new TKN(5);
+        tkn = new TKN(name, symbol, 5);
+    }
+
+    function testGeneral() public {
+        assertEq(tkn.name(), name);
+        assertEq(tkn.symbol(), symbol);
     }
 
     function testFaucet() public {

@@ -9,10 +9,17 @@ import "./WTKN.sol";
 contract WTKNTest is DSTest {
     TKN tkn;
     WTKN wtkn;
+    string name = "Wrapped Token";
+    string symbol = "WTKN";
 
     function setUp() public {
-        tkn = new TKN(1000);
-        wtkn = new WTKN(address(tkn));
+        tkn = new TKN("Token", "TKN", 1000);
+        wtkn = new WTKN(name, symbol, address(tkn));
+    }
+
+    function testGeneral() public {
+        assertEq(wtkn.name(), name);
+        assertEq(wtkn.symbol(), symbol);
     }
 
     function testWrap() public {

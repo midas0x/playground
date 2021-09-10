@@ -4,7 +4,7 @@ pragma solidity ^0.8.6;
 import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 contract TKN is ERC20 {
-    constructor(uint256 supply) ERC20("Token", "TKN") {
+    constructor(string memory name, string memory symbol, uint256 supply) ERC20(name, symbol) {
         // 1 token = 1 * (10 ** decimals)
         _mint(address(this), supply * 10**uint256(decimals()));
     }
