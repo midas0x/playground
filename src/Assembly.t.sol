@@ -6,7 +6,7 @@ import "../lib/ds-test/src/test.sol";
 import "./Assembly.sol";
 
 contract AssemblyTest is DSTest {
-    Assembly asm;
+    Assembly private asm;
 
     function setUp() public {
         asm = new Assembly();

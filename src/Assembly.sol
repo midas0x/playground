@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
+/* solhint-disable no-inline-assembly */
+
 contract Assembly {
     function main() external pure returns (uint256) {
         uint8 z = 5;

@@ -10,7 +10,7 @@ interface WETH {
 }
 
 contract WethTest is DSTest {
-    WETH weth;
+    WETH private weth;
 
     function setUp() public {
         weth = WETH(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2);

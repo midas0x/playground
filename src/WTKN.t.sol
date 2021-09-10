@@ -7,10 +7,10 @@ import "./TKN.sol";
 import "./WTKN.sol";
 
 contract WTKNTest is DSTest {
-    TKN tkn;
-    WTKN wtkn;
-    string name = "Wrapped Token";
-    string symbol = "WTKN";
+    TKN private tkn;
+    WTKN private wtkn;
+    string private name = "Wrapped Token";
+    string private symbol = "WTKN";
 
     function setUp() public {
         tkn = new TKN("Token", "TKN", 1000);

@@ -2,6 +2,7 @@
 pragma solidity ^0.8.6;
 
 contract DappTutorial {
+    // solhint-disable-next-line no-empty-blocks
     receive() external payable {}
 
     function withdraw(uint256 password) public {

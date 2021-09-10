@@ -6,13 +6,13 @@ import "../lib/ds-test/src/test.sol";
 import "./DappTutorial.sol";
 
 contract DappTutorialTest is DSTest {
-    DappTutorial dappTutorial;
+    DappTutorial private dappTutorial;
 
     function setUp() public {
         dappTutorial = new DappTutorial();
     }
 
-    function test_withdraw(uint96 amount) public {
+    function testWithdraw(uint96 amount) public {
         payable(address(dappTutorial)).transfer(amount);
         uint256 preBalance = address(this).balance;
         dappTutorial.withdraw(42);
@@ -20,7 +20,7 @@ contract DappTutorialTest is DSTest {
         assertEq(preBalance + amount, postBalance);
     }
 
-    function testFail_withdraw_wrong_pass() public {
+    function testFailWithdrawWrongPass() public {
         payable(address(dappTutorial)).transfer(1 ether);
         uint256 preBalance = address(this).balance;
         dappTutorial.withdraw(1);
@@ -28,13 +28,14 @@ contract DappTutorialTest is DSTest {
         assertEq(preBalance + 1 ether, postBalance);
     }
 
-    // function proveFail_withdraw(uint guess) public {
+    // function proveFailWithdraw(uint256 guess) public {
     //     payable(address(dappTutorial)).transfer(1 ether);
-    //     uint preBalance = address(this).balance;
+    //     uint256 preBalance = address(this).balance;
     //     dappTutorial.withdraw(guess);
-    //     uint postBalance = address(this).balance;
+    //     uint256 postBalance = address(this).balance;
     //     assertEq(preBalance + 1 ether, postBalance);
     // }
 
+    // solhint-disable-next-line no-empty-blocks
     receive() external payable {}
 }

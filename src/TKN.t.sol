@@ -6,9 +6,9 @@ import "../lib/ds-test/src/test.sol";
 import "./TKN.sol";
 
 contract TKNTest is DSTest {
-    TKN tkn;
-    string name = "Token";
-    string symbol = "TKN";
+    TKN private tkn;
+    string private name = "Token";
+    string private symbol = "TKN";
 
     function setUp() public {
         tkn = new TKN(name, symbol, 5);

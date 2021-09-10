@@ -10,5 +10,5 @@ contract WTKN is ERC20, ERC20Wrapper {
         string memory name,
         string memory symbol,
         address underlying
-    ) ERC20(name, symbol) ERC20Wrapper(IERC20(underlying)) {}
+    ) ERC20(name, symbol) ERC20Wrapper(IERC20(underlying)) {} // solhint-disable no-empty-blocks
 }
