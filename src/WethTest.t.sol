@@ -4,7 +4,8 @@ pragma solidity ^0.8.6;
 import "../lib/ds-test/src/test.sol";
 
 interface WETH {
-    function balanceOf(address) external returns (uint);
+    function balanceOf(address) external returns (uint256);
+
     function deposit() external payable;
 }
 
