@@ -16,6 +16,8 @@ dapp debug [--rpc]
 dapp test [-m <string>] [-v] [--rpc] [--replay <string>]
 
 npm run format
+
+npm run lint
 ```
 
 ## Links

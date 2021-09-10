@@ -4,7 +4,8 @@
   "description": "Playground to test out different Smart Contract and dApp ideas.",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "solhint --config ./.solhint.json --max-warnings 0 ./**/*.sol"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,8 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "prettier": "^2.4.0",
-    "prettier-plugin-solidity": "^1.0.0-beta.18"
+    "prettier-plugin-solidity": "^1.0.0-beta.18",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "0.0.5"
   }
 }
