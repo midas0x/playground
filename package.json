@@ -1,0 +1,14 @@
+{
+  "name": "@midas0x/playground",
+  "version": "0.1.0",
+  "description": "Playground to test out different Smart Contract and dApp ideas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:midas0x/playground.git"
+  },
+  "license": "Apache-2.0"
+}
