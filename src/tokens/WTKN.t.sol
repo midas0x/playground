@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-import "../lib/ds-test/src/test.sol";
+import "../../lib/ds-test/src/test.sol";
 
 import "./TKN.sol";
 import "./WTKN.sol";
