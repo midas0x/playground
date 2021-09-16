@@ -14,6 +14,11 @@ contract TKN is ERC20 {
 
     function faucet(uint256 amount) public {
         this.approve(msg.sender, amount);
-        transferFrom(address(this), msg.sender, amount);
+        this.transfer(msg.sender, amount);
+    }
+
+    function faucet(address recipient, uint256 amount) public {
+        this.approve(recipient, amount);
+        this.transfer(recipient, amount);
     }
 }
