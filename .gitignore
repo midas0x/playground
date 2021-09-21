@@ -2,3 +2,4 @@
 /out
 hevm.libs.*
 node_modules
+tmp
