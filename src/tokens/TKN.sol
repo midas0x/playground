@@ -12,12 +12,12 @@ contract TKN is ERC20 {
         _mint(address(this), supply);
     }
 
-    function faucet(uint256 amount) public {
+    function faucet(uint256 amount) external {
         this.approve(msg.sender, amount);
         this.transfer(msg.sender, amount);
     }
 
-    function faucet(address recipient, uint256 amount) public {
+    function faucet(address recipient, uint256 amount) external {
         this.approve(recipient, amount);
         this.transfer(recipient, amount);
     }
