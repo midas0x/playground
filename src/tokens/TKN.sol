@@ -1,24 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
+import "../../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 import "../../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
-contract TKN is ERC20 {
-    constructor(
-        string memory name,
-        string memory symbol,
-        uint256 supply
-    ) ERC20(name, symbol) {
-        _mint(address(this), supply);
-    }
+contract TKN is ERC20, Ownable {
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {} // solhint-disable-line no-empty-blocks
 
-    function faucet(uint256 amount) external {
-        this.approve(msg.sender, amount);
-        this.transfer(msg.sender, amount);
-    }
-
-    function faucet(address recipient, uint256 amount) external {
-        this.approve(recipient, amount);
-        this.transfer(recipient, amount);
+    function mint(address account, uint256 amount) public onlyOwner {
+        _mint(account, amount);
     }
 }

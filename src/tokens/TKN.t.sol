@@ -17,7 +17,7 @@ contract TKNTest is DSTest {
     string private symbol = "TKN";
 
     function setUp() public {
-        tkn = new TKN(name, symbol, 100 ether);
+        tkn = new TKN(name, symbol);
         alice = new User();
     }
 
@@ -27,9 +27,9 @@ contract TKNTest is DSTest {
     }
 
     function testFaucet() public {
-        tkn.faucet(10 ether);
+        tkn.mint(address(this), 10 ether);
         assertEq(tkn.balanceOf(address(this)), 10 ether);
-        tkn.faucet(address(alice), 20 ether);
+        tkn.mint(address(alice), 20 ether);
         assertEq(tkn.balanceOf(address(alice)), 20 ether);
     }
 }
