@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-import "../../lib/ds-test/src/test.sol";
+import { DSTest } from "../../lib/ds-test/src/test.sol";
 
-import "./TKN.sol";
-import "./WTKN.sol";
+import { TKN } from "./TKN.sol";
+import { WTKN } from "./WTKN.sol";
 
 contract WTKNTest is DSTest {
     TKN private tkn;

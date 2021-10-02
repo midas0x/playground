@@ -4,11 +4,11 @@ pragma solidity ^0.8.6;
 /* solhint-disable reason-string */
 /* solhint-disable avoid-low-level-calls */
 
-import "../../lib/ds-test/src/test.sol";
+import { DSTest } from "../../lib/ds-test/src/test.sol";
 
-import "./Proxy.sol";
-import "./LogicV1.sol";
-import "./LogicV2.sol";
+import { Proxy } from "./Proxy.sol";
+import { LogicV1 } from "./LogicV1.sol";
+import { LogicV2 } from "./LogicV2.sol";
 
 contract ProxyTest is DSTest {
     Proxy private proxy;

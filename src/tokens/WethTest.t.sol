@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-import "../../lib/ds-test/src/test.sol";
+import { DSTest } from "../../lib/ds-test/src/test.sol";
 
 interface WETH {
     function balanceOf(address) external returns (uint256);
