@@ -18,7 +18,7 @@ contract WethTest is DSTest {
 
     function testWrap() public {
         assertEq(weth.balanceOf(address(this)), 0);
-        weth.deposit{value: 1 ether}();
+        weth.deposit{ value: 1 ether }();
         assertEq(weth.balanceOf(address(this)), 1 ether);
     }
 }
