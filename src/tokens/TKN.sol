@@ -10,4 +10,8 @@ contract TKN is ERC20, Ownable {
     function mint(address account, uint256 amount) public onlyOwner {
         _mint(account, amount);
     }
+
+    function faucet(uint256 amount) external override {
+        _mint(msg.sender, amount);
+    }
 }
