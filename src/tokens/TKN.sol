@@ -7,7 +7,7 @@ import "../../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 contract TKN is ERC20, Ownable {
     constructor(string memory name, string memory symbol) ERC20(name, symbol) {} // solhint-disable-line no-empty-blocks
 
-    function mint(address account, uint256 amount) public onlyOwner {
+    function mint(address account, uint256 amount) external override onlyOwner {
         _mint(account, amount);
     }
 
